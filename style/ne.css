@@ -232,7 +232,7 @@
 @media only screen and (max-width: 240px), only screen and (max-device-width:240px) {
 	
 }
-.content{
+.activity-content{
 	width: 100%;
 }
 .content-list{
@@ -445,14 +445,42 @@
 	color: #444444;
 	font-size: 0.6em;
 	text-align: center;
-	font-family: "微软雅黑";e83428
+	font-family: "微软雅黑";
+	padding: 0px 4%;
+    box-sizing: border-box;
+}
+.record ul li p{
+	display: -webkit-flex;
 }
 .record ul li p span{
 	color: #e83428;
 	margin:0 3px;
+	font-size: 0.8em;
+	text-transform: Uppercase;
 }
-.record ul li p strong{
+.record ul li p span:nth-child(1){
+	color: #e83428;
 	margin:0 3px;
+	-webkit-flex:2;
+}
+.record ul li p span:nth-child(2){
+	-webkit-flex:1;
+}
+.record ul li p span:nth-child(3){
+	-webkit-flex:1;
+}
+.record ul li p span:nth-child(4){
+	-webkit-flex:2;
+}
+.record ul li p span:nth-child(1) small{
+	color: #444444;
+}
+.record ul li p span:nth-child(2) small,.record ul li p span:nth-child(3) small,.record ul li p span:nth-child(4) small{
+	color: #e83428;
+	margin-right: 4px;
+}
+.record ul li p span:nth-child(2),.record ul li p span:nth-child(3),.record ul li p span:nth-child(4){
+	color: #444444;
 }
 .mask{
 	width: 100%;
