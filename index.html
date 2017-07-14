@@ -177,17 +177,19 @@
         })(document, window); 
         $(function(){
             $(window).load(function(){
-                // var whit=3;
-                //     whit--;
-                // setTimeout(function () {
-                //     $(".tan").hide();
-                //     console.log(whit)
-                // }, 3000);
-                var wait=5;  
+                var wait=5;
+                $("html,body").css({
+                    'height':'100%',
+                    'overflow':'hidden'
+                })  
                 timeOut();  
                 function timeOut(){  
                     if(wait==0){
                         $(".tan").hide();
+                        $("html,body").css({
+                            'height':'auto',
+                            'overflow':'auto'
+                        }) 
                     }else{                    
                         setTimeout(function(){  
                             wait--;  
