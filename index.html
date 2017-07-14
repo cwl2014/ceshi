@@ -57,10 +57,10 @@
                     </div>
                     <ul class="Stars">
                         <li>
-                            <img src="images/china-6.png">
+                            <img src="images/china-5.png">
                         </li>
                         <li>
-                            <img src="images/china-6.png">
+                            <img src="images/china-5.png">
                         </li>
                         <li>
                             <img src="images/china-5.png">
@@ -132,7 +132,7 @@
                     <ul>
                         <li>1、累计投资1000元年化投资金额即可点亮1枚五角星。首投复投均可参与此次活动。备注：年化投资金额=实际投资金额*标的期限/12（30天标按照1月标计算）。</li>
                         <li>首投：用户在平台第一次投资行为；复投：用户在平台第二次及以上投资行为。</li>
-                        <li>2、每点亮1枚五角星即可获得20元现金奖励，集齐五枚五角星获得一面国旗即可额外奖励50元现金，现金奖励可用于投资也可直接提现。</li>
+                        <li>2、每点亮1枚五角星即可获得20元现金奖励，集齐5枚五角星获得一面国旗即可额外奖励50元现金，现金奖励可用于投资也可直接提现。</li>
                         <li>3、现金奖励按照所投标的满标后进行结算，活动期间按照累计获得五角星和国旗数量最高档奖励发放。</li>
                         <li>4、活动奖励将于活动结束后的7个工作日内发放到平台个人账户。</li>
                         <li>5、此活动最终解释权在法律允许范围内归上海高富金融信息服务有限公司</li>
@@ -154,10 +154,11 @@
                     </div>
                 </section>
             </div>
-            <div class="tan" style="display: none;">
+            <div class="tan">
                 <div class="shadow"></div>
                 <a class="tan-close"></a>
                 <img src="images/china-11.png">
+                <span style="position: absolute;bottom: 5%;right: 5%;font-size: 0.6em;color: #fff;"></span>
             </div>
         </section>
     </div>
@@ -176,6 +177,25 @@
         })(document, window); 
         $(function(){
             $(window).load(function(){
+                // var whit=3;
+                //     whit--;
+                // setTimeout(function () {
+                //     $(".tan").hide();
+                //     console.log(whit)
+                // }, 3000);
+                var wait=5;  
+                timeOut();  
+                function timeOut(){  
+                    if(wait==0){
+                        $(".tan").hide();
+                    }else{                    
+                        setTimeout(function(){  
+                            wait--;  
+                            $(".tan>span").text(wait +" 秒");  
+                            timeOut();  
+                        },1000)  
+                    }  
+                } 
                 var a1=($(".record").find("img").height()*0.5822);
                 var a2=($(".record").find("img").height()*0.3352);
                 var a=($("#xstCont").find("li").size());
@@ -185,6 +205,28 @@
                     'height':a1+'px',
                     'margin-top':a2+'px'
                 })
+                var imgindex=0;
+                if(imgindex == 5){
+                    return false;
+                }else if(imgindex == 4){
+                    $(".Stars li").find("img").attr("src","images/china-6.png");
+                    $(".Stars li").eq(0).nextAll().find("img").attr("src","images/china-5.png");
+                    return false;
+                }else if(imgindex == 3){
+                    $(".Stars li").find("img").attr("src","images/china-6.png");
+                    $(".Stars li").eq(1).nextAll().find("img").attr("src","images/china-5.png");
+                    return false;
+                }else if(imgindex == 2){
+                    $(".Stars li").find("img").attr("src","images/china-6.png");
+                    $(".Stars li").eq(2).nextAll().find("img").attr("src","images/china-5.png");
+                    return false;
+                }else if(imgindex == 1){
+                    $(".Stars li").find("img").attr("src","images/china-6.png");
+                    $(".Stars li").eq(3).nextAll().find("img").attr("src","images/china-5.png");
+                    return false;
+                }else if(imgindex == 0){
+                    return false;
+                }
             })
             // SqApi.confirm("请先登录，再查看所有奖励。",{"btn":["关闭","立即登录"]},function(){
             //     alert("前去登录")
